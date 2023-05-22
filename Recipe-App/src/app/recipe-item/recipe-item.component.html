@@ -1,19 +1,17 @@
 <div class="wrapper">
   <div class="logo">
-    <img src="{{ recipe.imgUrl }}" alt="">
+    <img src="{{ recipe.image }}" alt="">
   </div>
-  <div class="text-center mt-4 name">{{ recipe.name }}</div>
-  <p>
-    {{ recipe.description }}
-  </p>
-  <button class="btn" (click)="openLg(content)">See More</button>
+  <div class="text-center mt-4 name">{{ recipe.title }}</div>
+
+  <button  routerLink="/recipe/{{ recipe.id }}" >See More</button>
 </div>
 
 <!-- MODAL -->
 <ng-template #content let-modal>
   <div class="modal-header flex justify-between items-center pr-3">
     <div class="text-center m-4 name">
-      <span>{{ recipe.name }}</span>
+      <span>{{ recipe.title }}</span>
     </div>
     <button
       type="button"
@@ -25,11 +23,11 @@
   <div class="modal-body">
     <div class="container-modal">
       <div class="logo my-4 mx-auto">
-        <img src="{{ recipe.imgUrl }}" alt="" >
+        <img src="{{ recipe.image }}" alt="" >
       </div>
       <div class="p-3">
         <h5 class="font-bold">Ingredients</h5>
-        <p>{{ recipe.ingredients }}</p>
+        <p>{{ recipe.servings }}</p>
       </div>
     </div>
   </div>
