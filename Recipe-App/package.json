@@ -25,6 +25,8 @@
     "@fortawesome/free-brands-svg-icons": "^6.4.0",
     "@fortawesome/free-regular-svg-icons": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "@ng-bootstrap/ng-bootstrap": "^14.1.1",
+    "@popperjs/core": "^2.11.7",
     "font-awesome": "^4.7.0",
     "ng": "^0.0.0",
     "ngmodal": "^2.0.1",

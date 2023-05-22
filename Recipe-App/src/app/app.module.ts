@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { RecipeListModule } from './recipe-list/recipe-list.module';
 import { AppRoutingModule } from './app-routing.module';
@@ -17,6 +18,7 @@ import { NavbarComponent } from './navbar/navbar.component';
   ],
   imports: [
     BrowserModule,
+    NgbModule,
     AppRoutingModule,
     RecipeListModule,
     HttpClientModule,
