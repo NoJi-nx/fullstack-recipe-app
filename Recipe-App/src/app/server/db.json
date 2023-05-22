@@ -1,0 +1,67 @@
+{
+  "recipes": [
+    {
+      "id": 1,
+      "name": "Shakshuka With Feta",
+      "description": "Här möts sparrisen lena smak och chilimajonnäsens hetta i en lättlagad och vacker vårrätt. Sparrisen grillas snabbt och toppa därefter med gochujangmajonnäsen, krispiga sjögräschips och koriander.",
+      "ingredients": "3 tablespoons extra-virgin olive oil, 1 large onion, halved and thinly, 3 tablespoons extra-virgin olive oil, 1 large onion, halved and thinly3 tablespoons extra-virgin olive oil, 1 large onion, halved and thinly3 tablespoons extra-virgin olive oil, 1 large onion, halved and thinly ",
+      "imgUrl": "https://static01.nyt.com/images/2021/03/28/dining/mc-shakshuka/mc-shakshuka-articleLarge.jpg",
+      "mealTime": "Dinner",
+      "recipeType": "Meat",
+      "specialDiet": "Gluten Free"
+    },
+    {
+      "id": 2,
+      "name": "Shakshuka With Feta",
+      "description": "Här möts sparrisen lena smak och chilimajonnäsens hetta i en lättlagad och vacker vårrätt. Sparrisen grillas snabbt och toppa därefter med gochujangmajonnäsen, krispiga sjögräschips och koriander.",
+      "ingredients": "extra-virgin olive oil, large onion",
+      "imgUrl": "https://static01.nyt.com/images/2021/03/28/dining/mc-shakshuka/mc-shakshuka-articleLarge.jpg",
+      "mealTime": "Breakfast",
+      "recipeType": "Pasta",
+      "specialDiet": "Lactose Free"
+    },
+    {
+      "id": 3,
+      "name": "Shakshuka With Feta",
+      "description": "Här möts sparrisen lena smak och chilimajonnäsens hetta i en lättlagad och vacker vårrätt. Sparrisen grillas snabbt och toppa därefter med gochujangmajonnäsen, krispiga sjögräschips och koriander.",
+      "ingredients": "3 tablespoons extra-virgin olive oil, 1 large onion, halved and thinly sliced ",
+      "imgUrl": "https://static01.nyt.com/images/2021/03/28/dining/mc-shakshuka/mc-shakshuka-articleLarge.jpg",
+      "mealTime": "Lunch",
+      "recipeType": "Tex-mex",
+      "specialDiet": "Vegan"
+    },
+    {
+      "id": 4,
+      "name": "Shakshuka With Feta",
+      "description": "Här möts sparrisen lena smak och chilimajonnäsens hetta i en lättlagad och vacker vårrätt. Sparrisen grillas snabbt och toppa därefter med gochujangmajonnäsen, krispiga sjögräschips och koriander.",
+      "ingredients": "3 tablespoons extra-virgin olive oil, 1 large onion, halved and thinly sliced ",
+      "imgUrl": "https://static01.nyt.com/images/2021/03/28/dining/mc-shakshuka/mc-shakshuka-articleLarge.jpg",
+      "mealTime": "Dinner",
+      "recipeType": "Dessert",
+      "specialDiet": "Vegetarian"
+    },
+
+    {
+      "id": 5,
+      "name": "Shakshuka With Feta",
+      "description": "Här möts sparrisen lena smak och chilimajonnäsens hetta i en lättlagad och vacker vårrätt. Sparrisen grillas snabbt och toppa därefter med gochujangmajonnäsen, krispiga sjögräschips och koriander.",
+      "ingredients": "3 tablespoons extra-virgin olive oil, 1 large onion, halved and thinly sliced ",
+      "imgUrl": "https://static01.nyt.com/images/2021/03/28/dining/mc-shakshuka/mc-shakshuka-articleLarge.jpg",
+      "mealTime": "Dinner",
+      "recipeType": "Dessert",
+      "specialDiet": "Vegetarian"
+    },
+
+    {
+      "id": 6,
+      "name": "Shakshuka With Feta",
+      "description": "Här möts sparrisen lena smak och chilimajonnäsens hetta i en lättlagad och vacker vårrätt. Sparrisen grillas snabbt och toppa därefter med gochujangmajonnäsen, krispiga sjögräschips och koriander.",
+      "ingredients": "3 tablespoons extra-virgin olive oil, 1 large onion, halved and thinly sliced ",
+      "imgUrl": "https://static01.nyt.com/images/2021/03/28/dining/mc-shakshuka/mc-shakshuka-articleLarge.jpg",
+      "mealTime": "Dinner",
+      "recipeType": "Dessert",
+      "specialDiet": "Vegetarian"
+    }
+  ]
+}
+

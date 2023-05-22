@@ -10,7 +10,6 @@ import { RecipeAllComponent } from '../recipe-all/recipe-all.component';
 
 @NgModule({
   declarations: [
-
     RecipeItemComponent,
     RecipeAllComponent
   ],
