@@ -8,10 +8,10 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   templateUrl: './recipe-item.component.html',
   styleUrls: ['./recipe-item.component.css'],
 })
-export class RecipeItemComponent {
-  closeResult: string;
+export class RecipeItemComponent implements OnInit{
+  closeResult!: string;
 
-  @Input() recipe: Recipe;
+  @Input() recipe!: Recipe;
 
   faHeart = faHeart;
 
@@ -19,7 +19,7 @@ export class RecipeItemComponent {
 
   ngOnInit(): void {}
 
-  openLg(content) {
+  openLg(content: any) {
     this.modalService.open(content, { size: 'lg' });
   }
 }
