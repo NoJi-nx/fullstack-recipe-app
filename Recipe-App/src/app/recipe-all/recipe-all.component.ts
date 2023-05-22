@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Recipe } from '../model/recipe';
+import { RecipeApiService } from '../recipe-api.service';
 
 @Component({
   selector: 'app-recipe-all',
@@ -6,10 +8,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./recipe-all.component.css']
 })
 export class RecipeAllComponent {
+  recipes: Recipe[] = [];
 
-  constructor() { }
+  constructor(private allRecipeApi: RecipeApiService) { }
 
   ngOnInit(): void {
+    this.allRecipeApi
+    .getRecipes()
+    .subscribe((recipes) => (this.recipes = recipes));
   }
 
 }
