@@ -1,10 +1,11 @@
 export interface Recipe {
   id: number;
-  name: string;
-  description: string;
-  ingredients: string;
-  mealTime: string;
-  recipeType: string;
-  specialDiet: string;
-  imgUrl: string;
+  title: string;
+  timePrep: number;
+  servings: number;
+  image: string;
+  summary: string;
+  dishTypes: string;
+  diets: string;
+  instructions: string;
 }
