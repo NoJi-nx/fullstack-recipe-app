@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class ListModel extends Model
 {
     use HasFactory;
+
+    protected $table = 'lists';
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }
