@@ -1,7 +1,7 @@
 export interface Recipe {
   id: number;
   title: string;
-  timePrep: number;
+  readyInMinutes: number;
   servings: number;
   image: string;
   summary: string;

@@ -6,10 +6,14 @@ describe('RecipeListComponent', () => {
   let component: RecipeListComponent;
   let fixture: ComponentFixture<RecipeListComponent>;
 
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ RecipeListComponent ]
+    })
+    .compileComponents();
+  });
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [RecipeListComponent]
-    });
     fixture = TestBed.createComponent(RecipeListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

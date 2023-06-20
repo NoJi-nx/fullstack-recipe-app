@@ -19,6 +19,8 @@ import { RecipeListComponent } from './recipe-list.component';
     CommonModule,
     RecipeListRoutingModule,
     FontAwesomeModule
-  ]
+  ],
+
+  exports: [RecipeListComponent] // Add this line to export the component
 })
 export class RecipeListModule { }
