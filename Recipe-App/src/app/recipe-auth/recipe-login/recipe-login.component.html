@@ -1,14 +1,14 @@
 <div class="wrapper">
 
   <div class="text-center mt-4 name">Login</div>
-  <form (ngSubmit)="loginUser()" class="p-3 mt-3">
+  <form [formGroup]="loginForm" (ngSubmit)="loginUser()" class="p-3 mt-3">
     <div class="form-field ">
-      <input type="email" name="email" id="email" placeholder="Email" />
+      <input type="email" formControlName="email" placeholder="Enter email" required />
     </div>
     <div class="form-field ">
-      <input type="password" name="password" id="pwd" placeholder="Password" />
+      <input type="password" formControlName="password"  placeholder="Enter password" />
     </div>
-    <button class="btn mt-3">Login</button>
+    <button type="submit" class="btn mt-3">Login</button>
   </form>
   <div class="text-center fs-6">
     <a routerLink="/register">Register</a>

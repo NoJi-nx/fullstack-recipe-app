@@ -1,19 +1,42 @@
 <div class="wrapper">
   <div class="text-center mt-4 name">Register</div>
-  <form class="p-3 mt-3">
+  <form class="p-3 mt-3" [formGroup]="registerForm" (ngSubmit)="registerUser()">
     <div class="form-field d-flex align-items-center">
-      <input type="text" name="userName" id="userName" placeholder="Username" />
+      <input
+        type="text"
+        formControlName="name"
+        placeholder="Enter name"
+        required
+      />
     </div>
     <div class="form-field d-flex align-items-center">
-      <input type="email" name="email" id="email" placeholder="Email" />
+      <input
+        type="email"
+        class="form-control"
+        formControlName="email"
+        placeholder="Enter email"
+        required
+      />
     </div>
     <div class="form-field d-flex align-items-center">
-      <input type="password" name="password" id="pwd" placeholder="Password" />
+      <input
+        type="password"
+        class="form-control"
+        formControlName="password"
+        placeholder="Password"
+        required
+      />
     </div>
     <div class="form-field d-flex align-items-center">
-      <input type="password" name="password" id="pwd" placeholder="Confirm Password" />
+      <input
+      type="password"
+      class="form-control"
+      formControlName="password_confirmation"
+      placeholder="Confirm password"
+      required
+    />
     </div>
-    <button class="btn mt-3">Register</button>
+    <button type="submit" class="btn mt-3">Register</button>
   </form>
   <div class="text-center fs-6">
     or

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { RecipeAuthService } from '../recipe-auth.service';
 
 @Component({
   selector: 'app-recipe-register',
@@ -6,10 +9,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./recipe-register.component.css']
 })
 export class RecipeRegisterComponent implements OnInit {
+  registerForm: FormGroup
 
-  constructor() { }
+  constructor(
+    public fb: FormBuilder,
+    public authService: RecipeAuthService,
+    public router: Router,
+  ) {
+    this.registerForm = this.fb.group({
+      name: [''],
+      email: [''],
+      password: [''],
+      confirm_password: [''],
+    });
+  }
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+  registerUser() {
+    this.authService.register(this.registerForm.value).subscribe((res) =>{
+      if (res.result) {
+        this.registerForm.reset();
+        this.router.navigate(['login']);
+      }
+    })
   }
 
 }

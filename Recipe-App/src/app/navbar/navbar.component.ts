@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RecipeAuthService } from '../recipe-auth/recipe-auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(public authService: RecipeAuthService) {}
+
+  logout() {
+    this.authService.doLogout();
+  }
 
   ngOnInit(): void {
   }

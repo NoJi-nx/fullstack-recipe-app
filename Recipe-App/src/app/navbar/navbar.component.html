@@ -4,12 +4,17 @@
 
       <div class="navbar-collapse">
 
-        <div class="">
+        <div *ngIf="!this.authService.isLoggedIn" class="">
           <a routerLink="/login" class="nav-item btn text-white">Login</a>
           <a routerLink="/register" class="nav-item btn text-white">Register</a>
         </div>
       </div>
-      <div class="d-inline-block" ngbDropdown #myDrop="ngbDropdown">
+      <div
+        *ngIf="this.authService.isLoggedIn"
+        class="d-inline-block"
+        ngbDropdown
+        #myDrop="ngbDropdown"
+      >
         <button
           class="btn btn-outline-light bg-danger mr-7"
           id="dropdownManual"
@@ -20,7 +25,7 @@
         </button>
         <div ngbDropdownMenu aria-labelledby="dropdownManual">
           <a routerLink="dashboard" ngbDropdownItem>DashBoard</a>
-          <button ngbDropdownItem>Logout</button>
+          <button (click)="logout()" class="btn" ngbDropdownItem>Logout</button>
         </div>
       </div>
     </div>

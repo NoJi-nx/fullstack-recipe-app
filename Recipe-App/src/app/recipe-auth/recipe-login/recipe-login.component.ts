@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { RecipeAuthService } from '../recipe-auth.service';
 
 @Component({
@@ -9,16 +9,21 @@ import { RecipeAuthService } from '../recipe-auth.service';
   styleUrls: ['./recipe-login.component.css']
 })
 export class RecipeLoginComponent implements OnInit {
-  loginUserInfo = {};
+  loginForm: FormGroup;
 
-  constructor(private auth: RecipeAuthService) {
+  constructor(
+    public fb: FormBuilder,
+    public authService: RecipeAuthService,
+    public router: Router
+  ) {
+    this.loginForm = this.fb.group({
+      email: [''],
+      password: [''],
+    });
   }
 
   ngOnInit(): void {}
       loginUser() {
-        this.auth.login(this.loginUserInfo).subscribe(
-          (res) => console.log(res),
-          (err) => console.log(err)
-        );
+        this.authService.loggedIn(this.loginForm.value);
       }
     }

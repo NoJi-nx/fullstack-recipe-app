@@ -7,14 +7,17 @@ import { RecipeLogoutComponent } from './recipe-logout/recipe-logout.component';
 import { RecipeDeletePassComponent } from './recipe-delete-pass/recipe-delete-pass.component';
 import { RecipePassForgotComponent } from './recipe-pass-forgot/recipe-pass-forgot.component';
 import { RecipeDashboardComponent } from './recipe-dashboard/recipe-dashboard.component';
+import { AuthGuard } from './auth.guard';
+
 
 const routes: Routes = [
   { path: 'login', component: RecipeLoginComponent },
   { path: 'register', component: RecipeRegisterComponent },
-  { path: 'logout', component: RecipeLogoutComponent },
-  { path: 'forgot-password', component: RecipePassForgotComponent },
-  { path: 'reset-password', component: RecipeDeletePassComponent },
-  { path: 'dashboard', component: RecipeDashboardComponent },
+  { path: 'user-dashboard/:id', component: RecipeDashboardComponent, canActivate: [AuthGuard]}
+  /*{ path: 'logout', component: RecipeLogoutComponent },
+  { path: 'password-forgot', component: RecipePassForgotComponent },
+  { path: 'delete-password', component: RecipeDeletePassComponent },
+  { path: 'dashboard', component: RecipeDashboardComponent },*/
 ];
 
 @NgModule({

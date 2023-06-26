@@ -7,8 +7,10 @@ import { RecipeDeletePassComponent } from './recipe-delete-pass/recipe-delete-pa
 import { RecipePassForgotComponent } from './recipe-pass-forgot/recipe-pass-forgot.component';
 import { RecipeDashboardComponent } from './recipe-dashboard/recipe-dashboard.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RecipeAuthRoutingModule } from './recipe-auth-routing.module';
+import { AuthInterceptor } from './auth.interceptor';
+
 
 
 @NgModule({
@@ -26,7 +28,15 @@ import { RecipeAuthRoutingModule } from './recipe-auth-routing.module';
     ReactiveFormsModule,
     HttpClientModule,
     RecipeAuthRoutingModule
-  ]
+  ],
+
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+  ],
 })
 
 export class RecipeAuthModule { }
