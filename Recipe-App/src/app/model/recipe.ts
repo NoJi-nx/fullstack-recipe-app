@@ -5,7 +5,7 @@ export interface Recipe {
   servings: number;
   image: string;
   summary: string;
-  dishTypes: string;
-  diets: string;
+  dishType: string;
+  diet: string;
   instructions: string;
 }

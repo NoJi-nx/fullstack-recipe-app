@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Recipe } from '../model/recipe';
+import { Recipe } from '../../model/recipe';
 
 @Injectable({
   providedIn: 'root',
@@ -20,7 +20,7 @@ export class RecipeApiService {
 
   getRandomRecipe(): Observable<object> {
     return this.http.get(
-      `${this.apiSpoon}/random?apiKey=${this.apiKey}&number=7`
+      `${this.apiSpoon}/random?apiKey=${this.apiKey}&number=2`
     );
   }
 
