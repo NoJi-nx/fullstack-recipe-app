@@ -8,6 +8,10 @@
           <a routerLink="/login" class="nav-item btn text-white">Login</a>
           <a routerLink="/register" class="nav-item btn text-white">Register</a>
         </div>
+
+        <div>
+          <a routerLink="/" class="nav-item btn text-white">Home</a>
+        </div>
       </div>
       <div
         *ngIf="this.authService.isLoggedIn"

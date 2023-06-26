@@ -6,12 +6,7 @@ describe('RecipeDashboardComponent', () => {
   let component: RecipeDashboardComponent;
   let fixture: ComponentFixture<RecipeDashboardComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ RecipeDashboardComponent ]
-    })
-    .compileComponents();
-  });
+
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -22,6 +17,13 @@ describe('RecipeDashboardComponent', () => {
     fixture.detectChanges();
   });
 
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ RecipeDashboardComponent ]
+    })
+    .compileComponents();
+  });
+  
   it('generate', () => {
     expect(component).toBeTruthy();
   });
