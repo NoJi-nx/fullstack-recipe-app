@@ -14,9 +14,7 @@ export class RecipeAllComponent implements OnInit  {
 
   ngOnInit(): void {
     this.allRecipeApi
-    .getRandomRecipe()
-      .subscribe((res:any)=>{
-        this.recipes = res.recipes.map((res:any)=>res);
-      })
+    .getRecipeAll()
+      .subscribe((recipes) => (this.recipes = recipes));
     }
 }

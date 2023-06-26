@@ -33,4 +33,10 @@ export class RecipeApiService {
   getRecipeByIdTest(recipeId: string): Observable<Recipe> {
     return this.http.get<Recipe>(`${this.apiUrl}/${recipeId}`);
   }
+
+  searchRecipe(query: any, diet: any, dishType: any): Observable<object> {
+    return this.http.get(
+      `${this.apiSpoon}/complexSearch?apiKey=${this.apiKey}&query=${query}&diet=${diet}&type=${dishType}`
+    );
+  }
 }
