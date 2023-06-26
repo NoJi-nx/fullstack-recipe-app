@@ -5,6 +5,7 @@ use App\Http\Controllers\ListController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use PharIo\Manifest\AuthorCollection;
+use App\Http\Controllers\RecipeListController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,19 +28,29 @@ Route::group(['middleware' => 'auth:sanctum'], function() {
     Route::post('logout', [AuthController::class, 'logout']);
     // Get specific user details
     Route::get('getuser/{id}', [AuthController::class, 'getUser']);
-    
+
     Route::get('list/{id}', [ListController::class, 'getList']);
+
 
 
     // TODO: CRUD for recipe lists
 
 Route::get('lists', [ListController::class, 'getAllLists']);
 
-Route::post('lists/{id}', [ListController::class, 'createList']);
+Route::post('list-create/{id}', [ListController::class, 'createList']);
 
-Route::put('lists/{id}', [ListController::class, 'updateList']);
+Route::put('list-update/{id}', [ListController::class, 'updateList']);
 
-Route::delete('list/{id}', [ListController::class, 'deleteList']);
+Route::delete('list-delete/{id}', [ListController::class, 'deleteList']);
+
+ 
+ Route::get('recipelist/{listId}', [RecipeListController::class], 'getRecipes');
+
+
+ Route::post('recipelist-add/{listId}', [RecipeListController::class], 'addRecipe');
+
+
+ Route::delete('recipelist-delete/{listId}', [RecipeListController::class, 'deleteRecipe']);
 
 /*Route::get('list/{id}', [ListController::class, 'getList']);
 

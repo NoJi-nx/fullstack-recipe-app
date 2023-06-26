@@ -10,13 +10,13 @@ class RecipeListModel extends Model
     use HasFactory;
 
     protected $fillable = [
-        'recipe',
+        'name',
         'recipe_id',
         'image',
-        'list_id'
+        'listRecipe_id'
     ];
 
-    public function user()
+    public function userLists()
     {
         return $this->belongsTo(ListModel::class, 'id');
     }

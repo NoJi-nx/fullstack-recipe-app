@@ -13,11 +13,15 @@ class ListModel extends Model
     protected $fillable = [
         'title',
         'user_id'
-    ]
-    ;
-   
+    ];
 
-    public function user(){
+    public function recipeList()
+    {
+        return $this->hasMany(RecipeListModel::class, "list_id");
+    }
+    
+    public function user()
+    {
         return $this->belongsTo(User::class);
     }
 
