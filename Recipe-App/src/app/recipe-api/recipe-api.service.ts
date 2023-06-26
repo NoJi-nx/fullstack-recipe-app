@@ -8,9 +8,8 @@ import { Recipe } from '../model/recipe';
 })
 export class RecipeApiService {
   apiUrl = 'http://localhost:4200/recipes';
-  apiEdamam = 'https://api.edamam.com/api/recipes/v2';
-  appId = 'e2862b60';
-  appKey = 'fbb3e4a9d3a9fdce2d9901c90197b39f';
+  apiSpoon = 'https://api.spoonacular.com/recipes';
+  apiKey = '1563e3ed8d134929a2184d0aba83af65';
   recipes: Recipe[] = [];
 
   constructor(private http: HttpClient) {}
@@ -21,13 +20,13 @@ export class RecipeApiService {
 
   getRandomRecipe(): Observable<object> {
     return this.http.get(
-      `${this.apiEdamam}/random?apiKey=${this.appKey}&number=2`
+      `${this.apiSpoon}/random?apiKey=${this.apiKey}&number=7`
     );
   }
 
   getRecipeById(recipeId: string): Observable<Recipe> {
     return this.http.get<Recipe>(
-      `${this.apiEdamam}/${recipeId}/information?apiKey=${this.appKey}`
+      `${this.apiSpoon}/${recipeId}/information?apiKey=${this.apiKey}`
     );
   }
 

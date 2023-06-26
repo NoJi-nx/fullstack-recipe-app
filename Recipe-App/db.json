@@ -1,0 +1,47 @@
+{
+  "recipes": [
+    {
+      "id": 1,
+      "title": "Shakshuka With Feta",
+      "readyInMinutes": 60,
+      "servings": 5,
+      "image": "https://static01.nyt.com/images/2021/03/28/dining/mc-shakshuka/mc-shakshuka-articleLarge.jpg",
+      "dishTypes": "Dinner",
+      "diets": "Gluten Free",
+      "instructions": "Put in a greased and floured cake pan. Bake at 325-350 degrees for 1 1/2 hours. Save some cherries and nuts to decorate the top with. This makes a large cake and can be kept in the refrigerator for days."
+    },
+    {
+
+      "id": 1,
+      "title": "Shakshuka With Feta",
+      "readyInMinutes": "Här möts sparrisen lena smak och chilimajonnäsens hetta i en lättlagad och vacker vårrätt. Sparrisen grillas snabbt och toppa därefter med gochujangmajonnäsen, krispiga sjögräschips och koriander.",
+      "servings": "3 tablespoons extra-virgin olive oil, 1 large onion, halved and thinly, 3 tablespoons extra-virgin olive oil, 1 large onion, halved and thinly3 tablespoons extra-virgin olive oil, 1 large onion, halved and thinly3 tablespoons extra-virgin olive oil, 1 large onion, halved and thinly ",
+      "image": "https://static01.nyt.com/images/2021/03/28/dining/mc-shakshuka/mc-shakshuka-articleLarge.jpg",
+      "dishTypes": "Dinner",
+      "diets": "Gluten Free",
+      "instructions": "Put in a greased and floured cake pan. Bake at 325-350 degrees for 1 1/2 hours. Save some cherries and nuts to decorate the top with. This makes a large cake and can be kept in the refrigerator for days."
+    },
+    {
+
+      "id": 1,
+      "title": "Shakshuka With Feta",
+      "readyInMinutes": "Här möts sparrisen lena smak och chilimajonnäsens hetta i en lättlagad och vacker vårrätt. Sparrisen grillas snabbt och toppa därefter med gochujangmajonnäsen, krispiga sjögräschips och koriander.",
+      "servings": "3 tablespoons extra-virgin olive oil, 1 large onion, halved and thinly, 3 tablespoons extra-virgin olive oil, 1 large onion, halved and thinly3 tablespoons extra-virgin olive oil, 1 large onion, halved and thinly3 tablespoons extra-virgin olive oil, 1 large onion, halved and thinly ",
+      "image": "https://static01.nyt.com/images/2021/03/28/dining/mc-shakshuka/mc-shakshuka-articleLarge.jpg",
+      "dishTypes": "Dinner",
+      "diets": "Gluten Free",
+      "instructions": "Put in a greased and floured cake pan. Bake at 325-350 degrees for 1 1/2 hours. Save some cherries and nuts to decorate the top with. This makes a large cake and can be kept in the refrigerator for days."
+    },
+    {
+    
+      "id": 1,
+      "title": "Shakshuka With Feta",
+      "readyInMinutes": "Här möts sparrisen lena smak och chilimajonnäsens hetta i en lättlagad och vacker vårrätt. Sparrisen grillas snabbt och toppa därefter med gochujangmajonnäsen, krispiga sjögräschips och koriander.",
+      "servings": "3 tablespoons extra-virgin olive oil, 1 large onion, halved and thinly, 3 tablespoons extra-virgin olive oil, 1 large onion, halved and thinly3 tablespoons extra-virgin olive oil, 1 large onion, halved and thinly3 tablespoons extra-virgin olive oil, 1 large onion, halved and thinly ",
+      "image": "https://static01.nyt.com/images/2021/03/28/dining/mc-shakshuka/mc-shakshuka-articleLarge.jpg",
+      "dishTypes": "Dinner",
+      "diets": "Gluten Free",
+      "instructions": "Put in a greased and floured cake pan. Bake at 325-350 degrees for 1 1/2 hours. Save some cherries and nuts to decorate the top with. This makes a large cake and can be kept in the refrigerator for days."
+    }
+  ]
+}

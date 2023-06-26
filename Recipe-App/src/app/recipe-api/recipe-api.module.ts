@@ -5,6 +5,7 @@ import { RecipeApiRoutingModule } from './recipe-api-routing.module';
 import { RecipeAllComponent } from '../recipe-all/recipe-all.component'
 import { RecipeListComponent } from '../recipe-list/recipe-list.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   imports: [
     CommonModule,
     RecipeApiRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    NgbModule,
   ],
 })
 export class RecipeApiModule { }
