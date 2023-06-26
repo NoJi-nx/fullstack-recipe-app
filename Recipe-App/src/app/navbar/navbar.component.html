@@ -1,9 +1,28 @@
 <div class="container">
-  <nav class="navbar navbar-light">
-    <div class="container container-fluid">
-      <div class="navbar-collapse" id="navbarCollapse">
-      </div>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
 
+      <div class="navbar-collapse">
+
+        <div class="">
+          <a routerLink="/login" class="nav-item btn text-white">Login</a>
+          <a routerLink="/register" class="nav-item btn text-white">Register</a>
+        </div>
+      </div>
+      <div class="d-inline-block" ngbDropdown #myDrop="ngbDropdown">
+        <button
+          class="btn btn-outline-light bg-danger mr-7"
+          id="dropdownManual"
+          ngbDropdownAnchor
+          (focus)="myDrop.open()"
+        >
+          <i class="fa fa-user" aria-hidden="true"></i>
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownManual">
+          <a routerLink="dashboard" ngbDropdownItem>DashBoard</a>
+          <button ngbDropdownItem>Logout</button>
+        </div>
+      </div>
     </div>
   </nav>
 </div>

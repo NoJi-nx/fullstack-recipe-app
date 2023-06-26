@@ -7,16 +7,15 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { AuthComponent } from './auth/auth.component';
 import { RecipeApiModule } from './RecipeComponents/recipe/recipe-api.module';
+import { RecipeAuthModule } from './recipe-auth/recipe-auth.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    AuthComponent,
-  ],
+   ],
   imports: [
     BrowserModule,
     NgbModule,
@@ -24,6 +23,7 @@ import { RecipeApiModule } from './RecipeComponents/recipe/recipe-api.module';
     HttpClientModule,
     FormsModule,
     RecipeApiModule,
+    RecipeAuthModule,
     FontAwesomeModule,
     ReactiveFormsModule
 
