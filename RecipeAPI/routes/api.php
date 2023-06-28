@@ -17,21 +17,16 @@ use App\Http\Controllers\RecipeListController;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-// Login user
-Route::post('login', [AuthController::class, 'login']);
-// Register user
-Route::post('register', [AuthController::class, 'register']);
 
-// If logged in...
+
+// Om  inloggad
 Route::group(['middleware' => 'auth:sanctum'], function() {
-    // Logout user
-    Route::post('logout', [AuthController::class, 'logout']);
-    // Get specific user details
-    Route::get('getuser/{id}', [AuthController::class, 'getUser']);
+// Logga ut användare
+Route::post('logout', [AuthController::class, 'logout']);
+// Info på användaren
+Route::get('getuser/{id}', [AuthController::class, 'getUser']);
 
-    Route::get('list/{id}', [ListController::class, 'getList']);
-
-
+Route::get('list/{id}', [ListController::class, 'getList']);
 
     // TODO: CRUD for recipe lists
 
@@ -43,7 +38,7 @@ Route::put('list-update/{id}', [ListController::class, 'updateList']);
 
 Route::delete('list-delete/{id}', [ListController::class, 'deleteList']);
 
- 
+
  Route::get('recipelist/{listId}', [RecipeListController::class], 'getRecipes');
 
 
@@ -57,3 +52,8 @@ Route::delete('list-delete/{id}', [ListController::class, 'deleteList']);
 
 Route::get('lists/search/{id}', [ListController::class], 'search');*/
 });
+
+// Logga in
+Route::post('login', [AuthController::class, 'login']);
+// Registrera
+Route::post('register', [AuthController::class, 'register']);

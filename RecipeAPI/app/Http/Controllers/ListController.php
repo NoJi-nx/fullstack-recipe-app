@@ -10,16 +10,16 @@ class ListController extends Controller
 {
     //CRUD
     // Läsa all
-    public function getAllLists()
+    public function getAllLists($userId)
     {
-        $lists = ListModel::get()->toJson(JSON_PRETTY_PRINT);
+        $lists = ListModel::all()->where('user_id', $userId);
         return response($lists, 200);
     }
     //läsa en
-    public function getList($id)
+    public function getList($listId)
     {
-        if (ListModel::where('id', $id)->exists()) {
-            $list = ListModel::where('id', $id)->get()->toJson(JSON_PRETTY_PRINT);
+        if (ListModel::where('id', $listId)->exists()) {
+            $list = ListModel::where('id', $listId)->get()->toJson(JSON_PRETTY_PRINT);
             return response($list, 200);
         } else {
             return response()->json([
@@ -28,18 +28,18 @@ class ListController extends Controller
         }
     }
     //skapa en
-    public function createList(Request $request)
+    public function createList(Request $request, $userId)
     {
-        $list = new ListModel();
-        $list->title = $request->title;
-        $list->save();
-
+        $list = ListModel::create([
+            'title' => $request['title'],
+            'user_id' => $userId
+        ]);
         return response()->json([
             "message" => "List created"
         ], 201);
     }
     //Ändra en
-    public function updateList(Request $request, $id)
+    /*public function updateList(Request $request, $id)
     {
         if (ListModel::where('id', $id)->exists()) {
             $list = ListModel::find($id);
@@ -54,13 +54,13 @@ class ListController extends Controller
                 "message" => "List not found"
             ], 404);
         }
-    }
+    }*/
 
     //Ta bort
-    public function deleteList($id)
+    public function deleteList($listId)
     {
-        if (ListModel::where('id', $id)->exists()) {
-            $list = ListModel::find($id);
+        if (ListModel::where('id', $listId)->exists()) {
+            $list = ListModel::find($listId);
             $list->delete();
 
             return response()->json([

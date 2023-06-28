@@ -5,6 +5,7 @@ import { Recipe } from '../../../model/recipe';
 import { faClock } from '@fortawesome/free-solid-svg-icons';
 import { faPlateWheat } from '@fortawesome/free-solid-svg-icons';
 import { faUtensils } from '@fortawesome/free-solid-svg-icons';
+import { RecipeListsService } from '../recipe-lists.service';
 
 @Component({
   selector: 'app-recipe-list',
@@ -22,13 +23,18 @@ export class RecipeListComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private recipesApiService: RecipeApiService
+    private recipesApiService: RecipeApiService,
+    private listsService: RecipeListsService
   ) {}
 
   ngOnInit(): void {
     this.recipeId = this.activatedRoute.snapshot.paramMap.get('id')!;
-    this.recipesApiService.getRecipeByIdTest(this.recipeId).subscribe((recipes) => {
+    this.recipesApiService.getRecipeById(this.recipeId).subscribe((recipes) => {
       this.recipe = recipes;
     });
+  }
+
+  addRecipe(){
+
   }
 }

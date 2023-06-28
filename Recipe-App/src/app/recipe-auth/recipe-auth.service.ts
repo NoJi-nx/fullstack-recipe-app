@@ -42,6 +42,10 @@ export class RecipeAuthService {
     return localStorage.getItem('access_token');
   }
 
+  getUserId() {
+    return localStorage.getItem('id');
+  }
+
   get isLoggedIn(): boolean {
     let authToken = localStorage.getItem('access_token');
     return authToken !== null ? true : false;

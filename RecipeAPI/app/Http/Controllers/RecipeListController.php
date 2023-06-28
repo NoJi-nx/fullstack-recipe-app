@@ -10,11 +10,16 @@ class RecipeListController extends Controller
     public function getRecipes($listId)
     {
         $recipes = RecipeListModel::all()->where('listRecipe_id', $listId);
+
+        if ($recipes->isEmpty()) {
+            return response($recipes, 204);
+        }
+        return response($recipes, 200); 
        
     }
 
-    //Add
-    public function addRecipe($listId, Request $request)
+    //Lägga
+    public function addRecipe(Request $request, $listId)
     {
         $exist = RecipeListModel::where('name', $request['recipeName'])->where('listRecipe_id', $listId);
 
@@ -31,11 +36,11 @@ class RecipeListController extends Controller
         }
     }
 
-    //Delete recipe
-    public function deleteRecipe($id)
+    //Ta bort
+    public function deleteRecipe($recipeId)
     {
-        if (RecipeListModel::where('id', $id)->exists()) {
-            $recipe = RecipeListModel::find($id);
+        if (RecipeListModel::where('id', $recipeId)->exists()) {
+            $recipe = RecipeListModel::find($recipeId);
             $recipe->delete();
 
             return response()->json([
