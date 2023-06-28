@@ -30,7 +30,7 @@ export class RecipeAuthService {
         localStorage.setItem('name', res.user.name);
         localStorage.setItem('email', res.user.email);
           this.currentUser = res;
-          this.router.navigate([`user-dashboard/${res.user.id}`]);
+          this.router.navigate([`user-dashboard`]);
            /*  this.getUserProfile(res.user.id).subscribe((res) => {
           this.currentUser = res;
           this.router.navigate([`user-dashboard/${res.user.id}`]);

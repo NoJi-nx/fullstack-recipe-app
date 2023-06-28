@@ -42,12 +42,22 @@ export class RecipeDashboardComponent implements OnInit {
     console.log(this.userEmail);
   }
 
+  deleteList(listId: number) {
+    console.log(listId);
+    this.recipeListService.deleteList(listId).subscribe((res: any) => {});
+  }
+
   createRecipeList(): void {
     const title = this.form.getRawValue();
     this.recipeListService.createList(title).subscribe((res: any) =>  {
       console.log(res);
     });
   }
+
+  onListClicked() {
+    this.recipeListClick = !this.recipeListClick;
+  }
+
   logout() {
     this.authService.doLogout();
   }

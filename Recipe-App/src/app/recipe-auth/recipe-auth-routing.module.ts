@@ -13,8 +13,7 @@ import { AuthGuard } from './auth.guard';
 const routes: Routes = [
   { path: 'login', component: RecipeLoginComponent },
   { path: 'register', component: RecipeRegisterComponent },
-  { path: 'user-dashboard/:id', component: RecipeDashboardComponent, canActivate: [AuthGuard]},
-  { path: 'dashboard', component: RecipeDashboardComponent },
+  { path: 'user-dashboard', component: RecipeDashboardComponent, canActivate: [AuthGuard]},
   /*{ path: 'logout', component: RecipeLogoutComponent },
   { path: 'password-forgot', component: RecipePassForgotComponent },
   { path: 'delete-password', component: RecipeDeletePassComponent },

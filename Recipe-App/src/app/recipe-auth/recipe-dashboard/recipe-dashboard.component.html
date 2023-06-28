@@ -12,9 +12,9 @@
     </div>
     <div class="col text-center">
       <h2 class="name">Your Lists</h2>
-      <form>
+      <form [formGroup]="form" (submit)="createRecipeList()">
         <div class="form-group">
-          <input class="title" placeholder="Enter list name" required />
+          <input formControlName="listName"  placeholder="Enter list name" required />
         </div>
         <button class="btn mt-3">Create List</button>
       </form>
@@ -23,24 +23,16 @@
         *ngFor="let list of lists"
       >
         <div>
-          <a class="mx-5" href="">{{ list.title }}</a>
+          <a class="mx-5" (click)="onListClicked()" >{{ list.title }}</a>
         </div>
-        <button class="btn-red">Delete</button>
+        <button (click)="deleteList(list.id)" class="btn-red">Delete</button>
       </div>
     </div>
   </div>
   <div class="row mt-5">
-    <div class="col text-center">
-      <h2 class="name mb-3">Name of the list</h2>
-      <div class="mb-4">
-        <a class="mx-5" href="">Recipe Name</a>
-        <button class="btn-red">Delete</button>
-      </div>
-       <div class="mb-4">
-        <a class="mx-5" href="">Recipe Name</a>
-        <button class="btn-red">Delete</button>
-      </div>
-       <div class="mb-4">
+    <div *ngIf="recipeListClick" class="col text-center">
+      <h2 class="name mb-3">Recipes in this list</h2>
+      <div  class="mb-4">
         <a class="mx-5" href="">Recipe Name</a>
         <button class="btn-red">Delete</button>
       </div>

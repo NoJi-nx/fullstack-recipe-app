@@ -39,10 +39,10 @@ Route::put('list-update/{id}', [ListController::class, 'updateList']);
 Route::delete('list-delete/{id}', [ListController::class, 'deleteList']);
 
 
- Route::get('recipelist/{listId}', [RecipeListController::class], 'getRecipes');
+ Route::get('recipelist/{listId}', [RecipeListController::class, 'getRecipes']);
 
 
- Route::post('recipelist-add/{listId}', [RecipeListController::class], 'addRecipe');
+ Route::post('recipelist-add/{listId}', [RecipeListController::class, 'addRecipe']);
 
 
  Route::delete('recipelist-delete/{listId}', [RecipeListController::class, 'deleteRecipe']);

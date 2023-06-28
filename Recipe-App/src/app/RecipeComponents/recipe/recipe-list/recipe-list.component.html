@@ -36,25 +36,34 @@
         </div>
       </div>
       <div class="row">
-        <form action="">
-            <select class="form-select" aria-label="Default select example">
-              <option selected>Add to list</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
-            </select>
-            <button class="btn btn-danger mt-3">Add</button>
-          </form>
+        <div class="col">
+          <div *ngIf="this.authService.isLoggedIn && lists.length > 0" ngbDropdown class="d-inline-block">
+            <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+              Add to list
+            </button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button *ngFor="let list of lists" (click)="
+                addRecipe(list.id, recipeId, recipe.title, recipe.image)
+              " ngbDropdownItem>
+                {{ list.title }}
+              </button>
+            </div>
+          </div>
+          <div *ngIf="this.authService.isLoggedIn && lists.length == 0 || lists.length == null" ngbDropdown
+            class="d-inline-block">
+            <a routerLink="/user-dashboard" type="button" class="btn btn-outline-primary" id="dropdownBasic1">
+              Create New List
+            </a>
+          </div>
+        </div>
       </div>
+      <div class="row"></div>
     </div>
-
   </div>
   <div class="row">
-
     <div class="col-sm text-center mt-4">
-      <h2 class="name">Description</h2>
+      <h2 class="name">Instructions</h2>
       <p>{{ recipe.instructions }}</p>
+    </div>
   </div>
-
-</div>
 </div>
