@@ -53,29 +53,18 @@ body {
   box-shadow: none;
   width: 100px;
   height: 40px;
-  background-color: #03a9f4;
-  color: #fff;
-  border-radius: 25px;
-  box-shadow: 3px 3px 3px #b1b1b1, -3px -3px 3px #fff;
-  letter-spacing: 1.3px;
-}
-.btn-red {
   background-color: #e20303;
-  box-shadow: none;
-  width: 100px;
-  height: 40px;
   color: #fff;
   border-radius: 25px;
   box-shadow: 3px 3px 3px #b1b1b1, -3px -3px 3px #fff;
   letter-spacing: 1.3px;
 }
 
+
 .btn:hover {
   background-color: #e92618;
 }
-.btn-red:hover {
-  background-color: #998080;
-}
+
 
 ul {
   list-style: none;
