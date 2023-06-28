@@ -17,7 +17,10 @@ use App\Http\Controllers\RecipeListController;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-
+// Logga in
+Route::post('login', [AuthController::class, 'login']);
+// Registrera
+Route::post('register', [AuthController::class, 'register']);
 
 // Om  inloggad
 Route::group(['middleware' => 'auth:sanctum'], function() {
@@ -30,7 +33,7 @@ Route::get('list/{id}', [ListController::class, 'getList']);
 
     // TODO: CRUD for recipe lists
 
-Route::get('lists', [ListController::class, 'getAllLists']);
+Route::get('lists/{id}', [ListController::class, 'getAllLists']);
 
 Route::post('list-create/{id}', [ListController::class, 'createList']);
 
@@ -53,7 +56,4 @@ Route::delete('list-delete/{id}', [ListController::class, 'deleteList']);
 Route::get('lists/search/{id}', [ListController::class], 'search');*/
 });
 
-// Logga in
-Route::post('login', [AuthController::class, 'login']);
-// Registrera
-Route::post('register', [AuthController::class, 'register']);
+

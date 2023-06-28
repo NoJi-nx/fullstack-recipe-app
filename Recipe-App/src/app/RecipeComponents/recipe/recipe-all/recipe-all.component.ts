@@ -13,8 +13,8 @@ export class RecipeAllComponent implements OnInit  {
   constructor(private allRecipeApi: RecipeApiService) { }
 
   ngOnInit(): void {
-    this.allRecipeApi
-    .getRecipeAll()
-      .subscribe((recipes) => (this.recipes = recipes));
-    }
+    this.allRecipeApi.getRandomRecipe().subscribe((res: any) => {
+      this.recipes = res.recipes.map((res: any) => res);
+    });
+  }
 }

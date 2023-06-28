@@ -3,7 +3,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders,
 } from '@angular/common/http';
 import { catchError, Observable, throwError, map } from 'rxjs';
 import { Router } from '@angular/router';
-import { User } from 'src/app/model/user';
+import { User } from 'src/app/recipe-auth/user';
 import { RecipeList } from 'src/app/model/recipe-list';
 import { Recipe } from 'src/app/model/recipe';
 

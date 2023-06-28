@@ -2,8 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders, } from '@angular/common/http';
 import { catchError, Observable, throwError, map } from 'rxjs';
 import { Router } from '@angular/router';
-import { User } from '../model/user';
+import { User } from './user';
 import { RecipeList } from '../model/recipe-list';
+import { Recipe } from '../model/recipe';
 
 @Injectable({
   providedIn: 'root'
@@ -58,6 +59,18 @@ export class RecipeAuthService {
     }
   }
 
+  getRecipeList(listId: any): Observable<any>{
+    let api = `${this.endPoint}/recipelist/${listId}`;
+    return this.http.get<Recipe[]>(api, {headers: this.headers})
+    .pipe(catchError(this.handleError));
+  }
+
+  deleteRecipeList(recipeId:any): Observable<any> {
+    let api = `${this.endPoint}/recipelist-delete/${recipeId}`;
+     return this.http.delete(api)
+       .pipe(catchError(this.handleError));
+  }
+
   // profil
 
   getUserLists(id: any): Observable<any> {
@@ -71,10 +84,10 @@ export class RecipeAuthService {
   handleError(error: HttpErrorResponse) {
     let msg = '';
     if (error.error instanceof ErrorEvent) {
-      // client error
+      // klient
       msg = error.error.message;
     } else {
-      // server error
+      // server
       msg = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
     return throwError(msg);

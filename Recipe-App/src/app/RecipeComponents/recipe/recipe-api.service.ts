@@ -20,7 +20,7 @@ export class RecipeApiService {
 
   getRandomRecipe(): Observable<object> {
     return this.http.get(
-      `${this.apiSpoon}/random?apiKey=${this.apiKey}&number=2`
+      `${this.apiSpoon}/random?apiKey=${this.apiKey}&number=6`
     );
   }
 

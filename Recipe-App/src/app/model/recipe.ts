@@ -1,5 +1,7 @@
 export interface Recipe {
   id: number;
+  recipe_id: number;
+  name: string;
   title: string;
   readyInMinutes: number;
   servings: number;
