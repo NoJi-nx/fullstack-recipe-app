@@ -4,17 +4,25 @@ namespace App\Http\Controllers;
 
 use App\Models\ListModel;
 use Illuminate\Http\Request;
-use PhpParser\Node\Expr\List_;
 
 class ListController extends Controller
 {
     //CRUD
+
     // Läsa all
     public function getAllLists($userId)
     {
+        
         $lists = ListModel::all()->where('user_id', $userId);
+        $lists = ListModel::get()->toJson(JSON_PRETTY_PRINT);
+        return response($lists, 200);
+
+        if ($lists->isEmpty()) {
+            return response($lists, 204);
+        }
         return response($lists, 200);
     }
+
     //läsa en
     public function getList($listId)
     {
@@ -27,9 +35,11 @@ class ListController extends Controller
             ], 404);
         }
     }
+    
     //skapa en
     public function createList(Request $request, $userId)
     {
+        
         $list = ListModel::create([
             'title' => $request['title'],
             'user_id' => $userId
@@ -38,8 +48,9 @@ class ListController extends Controller
             "message" => "List created"
         ], 201);
     }
-    //Ändra en
-    /*public function updateList(Request $request, $id)
+    
+    /*Ändra en
+    public function updateList(Request $request, $id)
     {
         if (ListModel::where('id', $id)->exists()) {
             $list = ListModel::find($id);
@@ -74,8 +85,8 @@ class ListController extends Controller
     }
 
     //Söka en
-    public function search($title)
+    /*public function search($title)
     {
         return ListModel::where('title', 'like', '%' . $title . '%')->get();
-    }
+    }*/
 }

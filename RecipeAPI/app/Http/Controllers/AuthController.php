@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 
 class AuthController extends Controller
@@ -13,6 +14,21 @@ class AuthController extends Controller
 
     public function register(Request $request)
     {
+
+         // Validate the incoming request data
+         $validator = Validator::make($request->all(), [
+            'name' => 'required|string',
+            'email' => 'required|string|unique:users,email',
+            'password' => 'required|string|confirmed',
+        ]);
+
+        // Check if validation fails
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors()], 422);
+        }
+
+        // If validation passes, proceed with user creation
+        $fields = $validator->validated();
 
         $fields = $request->validate([
             'name' => 'required|string',
@@ -46,7 +62,7 @@ class AuthController extends Controller
         if (!$user || !HASH::check($fields['password'], $user->password)) {
             return response([
                 "message" => "Credentials not correct"
-            ], 401);
+            ], );
         }
         $token = $user->createToken('myAppToken')->plainTextToken;
 
@@ -59,13 +75,6 @@ class AuthController extends Controller
     }
 
 
-    public function logout(Request $request)
-    {
-        auth()->user()->tokens()->delete();
-        return [
-            "message" => "logged out"
-        ];
-    }
 
 
     public function getUser($id)
@@ -79,4 +88,14 @@ class AuthController extends Controller
             ], 400);
         }
     }
+
+
+    public function logout(Request $request)
+    {
+        $request->user()->tokens()->delete();
+        return [
+            "message" => "logged out"
+        ];
+    }
+
 }

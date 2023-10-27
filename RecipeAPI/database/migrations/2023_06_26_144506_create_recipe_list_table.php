@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateRecipeListTable extends Migration
 {
     /**
      * Run the migrations.
@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->integer('recipe_id');
             $table->string('image');
-            $table->foreignId('listRecipe_id')->nullable()->constrained()->cascadeOnDelete();
+            $table->foreignId('listRecipe_id')->references('id')->on('lists');
             $table->timestamps();
         });
     }

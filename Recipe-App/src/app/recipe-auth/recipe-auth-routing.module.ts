@@ -10,14 +10,14 @@ import { RecipeDashboardComponent } from './recipe-dashboard/recipe-dashboard.co
 import { AuthGuard } from './auth.guard';
 
 
+// Define the routes for the Recipe Authentication module
 const routes: Routes = [
   { path: 'login', component: RecipeLoginComponent },
   { path: 'register', component: RecipeRegisterComponent },
   { path: 'user-dashboard', component: RecipeDashboardComponent, canActivate: [AuthGuard]},
-  /*{ path: 'logout', component: RecipeLogoutComponent },
+  { path: 'logout', component: RecipeLogoutComponent },
   { path: 'password-forgot', component: RecipePassForgotComponent },
   { path: 'delete-password', component: RecipeDeletePassComponent },
-  { path: 'dashboard', component: RecipeDashboardComponent },*/
 ];
 
 @NgModule({

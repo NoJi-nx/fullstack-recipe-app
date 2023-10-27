@@ -17,17 +17,11 @@ use App\Http\Controllers\RecipeListController;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-// Logga in
-Route::post('login', [AuthController::class, 'login']);
-// Registrera
-Route::post('register', [AuthController::class, 'register']);
 
 // Om  inloggad
 Route::group(['middleware' => 'auth:sanctum'], function() {
 // Logga ut användare
 Route::post('logout', [AuthController::class, 'logout']);
-// Info på användaren
-Route::get('getuser/{id}', [AuthController::class, 'getUser']);
 
 Route::get('list/{id}', [ListController::class, 'getList']);
 
@@ -41,8 +35,7 @@ Route::put('list-update/{id}', [ListController::class, 'updateList']);
 
 Route::delete('list-delete/{id}', [ListController::class, 'deleteList']);
 
-
- Route::get('recipelist/{listId}', [RecipeListController::class, 'getRecipes']);
+Route::get('recipelist/{listId}', [RecipeListController::class, 'getRecipes']);
 
 
  Route::post('recipelist-add/{listId}', [RecipeListController::class, 'addRecipe']);
@@ -55,5 +48,14 @@ Route::delete('list-delete/{id}', [ListController::class, 'deleteList']);
 
 Route::get('lists/search/{id}', [ListController::class], 'search');*/
 });
+
+// Logga in
+Route::post('login', [AuthController::class, 'login']);
+// Registrera
+Route::post('register', [AuthController::class, 'register']);
+
+// Info på användaren
+Route::get('getuser/{id}', [AuthController::class, 'getUser']);
+
 
 
