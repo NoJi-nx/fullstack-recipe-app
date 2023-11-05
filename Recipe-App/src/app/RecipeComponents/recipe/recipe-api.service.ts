@@ -7,7 +7,7 @@ import { Recipe } from '../../model/recipe';
   providedIn: 'root',
 })
 export class RecipeApiService {
-  apiUrl = 'http://localhost:8000/recipes';
+  apiUrl = 'https://u06-fullstack-recipe-app-nrice31-production.up.railway.app/recipes';
   apiSpoon = 'https://api.spoonacular.com/recipes';
   apiKey = '1563e3ed8d134929a2184d0aba83af65';
   recipes: Recipe[] = [];

@@ -11,7 +11,7 @@ import { Recipe } from 'src/app/model/recipe';
   providedIn: 'root'
 })
 export class RecipeListsService {
-  endPoint: string = 'http://localhost:8000/api';
+  endPoint: string = 'https://u06-fullstack-recipe-app-nrice31-production.up.railway.app/api';
 
 
   httpSettings = {
