@@ -1,31 +1,30 @@
-# U06 Receptapp
+## Fullstack-recipe-app
 
-Denna uppgift handlar om att bygga en receptapp som tillåter användaren att söka på recept och filtera resultat och (VG) spara recept som man gillar i olika listor. Både backend och frontend av applikationen ska deployas och kopplas ihop så att de fungerar tillsammans. 
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.2.
 
-## Bekanta er:
+## Development server
 
-I denna uppgift ska ni bekanta er med RecipeAPI, ett projekt skrivet i PHP/Laravel. 
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-Bekanta er genom att läsa igenom koden, få igång programmet med bland annat migrationer, seeding och serving. Testa sedan de olika requesten du får tillgång till genom att importera filen:
-"Insomnia_U06_requests.json" till er Insomnia klient. Ni kommer att behöva plocka ut de bearer tokens ni får vid inlogg eller registrering och klistra in i Bearer fältet för att kunna få åtkomst till de API vägar som ligger bakom authentication.
+## Code scaffolding
 
-![](2023-03-14-12-46-36.png)
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Bygga Frontend
+## Build
 
-Ni ska sedan skapa en frontend i Angular (utanför er devcontainer, t.ex. i ett annat VSCode fönster) som ska låta er söka efter och filtrera olika recept med hjälp av ett externt API såsom [edaman API](https://developer.edamam.com/edamam-docs-recipe-api) eller [spoonacular API](https://spoonacular.com/food-api) (ni kommer att behöva registrera er för att få tillgång till API:et).
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-Ni ska också koppla ihop erat frontend med RecipeAPI backenden. Skapa en sida för den inloggade användaren och tillåt användaren att logga in och logga ut.
+## Running unit tests
 
-## Deployment
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-När frontenden är färdig ska ni deploya både frontend (på e.g. [netlify](https://www.netlify.com/)) och backend (på e.g. [railway](https://railway.app/)). Väl i produktion ska dessa kopplas ihop så att de fungerar harmoniskt tillsammans. 
+## Running end-to-end tests
 
-## Utöka frontend och backend (VG)
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-För att få VG på den här uppgiften så ska ni utöka programmet så att användare kan spara recept de gillar i olika listor. T.ex. kanske en användare vill ha en lista för bbq, en för soppor och en lista för vegansk mat. Ni ska då lägga till nödvändiga delar för att åstadkomma detta i backend och frontend inklusive controllers och routes i backend, och extra komponenter, vyer och services i frontend (samt ändringar i tidigare delar där det behövs).
+## Further help
 
-Ännu fler extra detaljer får gärna läggas till i mån av tid och för att helt försäkra sitt VG, t.ex. förbättringar i redan existerande kod, ett snyggt UX/UI samt kopplingar till fler API:er.
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
 ## Mer info:
 
